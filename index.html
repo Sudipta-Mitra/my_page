@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Science Portfolio</title>
+    <title>Sudipta Mitra - Data Science Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter -->
@@ -12,8 +12,8 @@
         body {
             font-family: 'Inter', sans-serif;
             color: #e2e8f0; /* Light Slate 200 for better contrast on dark background */
-            /* Background gradient for the body - Adjusted to be blackish purple */
-            background: linear-gradient(135deg, #0a0a0a, #4c1d95); /* Very dark grey/black to dark purple */
+            /* Background gradient for the body - Very dark grey/black to dark purple */
+            background: linear-gradient(135deg, #0a0a0a, #4c1d95);
             min-height: 100vh; /* Ensure body takes full height */
             margin: 0;
             overflow-x: hidden; /* Prevent horizontal scroll */
@@ -77,6 +77,12 @@
         .hover\:text-indigo-800:hover {
             color: #c4b5fd; /* Even lighter on hover */
         }
+        /* Custom skill card colors */
+        .skill-card-bg-1 { background-color: rgba(139, 92, 246, 0.2); border-color: rgba(139, 92, 246, 0.4); } /* Purple-500 */
+        .skill-card-bg-2 { background-color: rgba(34, 197, 94, 0.2); border-color: rgba(34, 197, 94, 0.4); } /* Green-500 */
+        .skill-card-bg-3 { background-color: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); } /* Red-500 */
+        .skill-card-bg-4 { background-color: rgba(234, 179, 8, 0.2); border-color: rgba(234, 179, 8, 0.4); } /* Yellow-500 */
+
         .bg-indigo-100 {
             background-color: #8b5cf6; /* Purple 500 */
             color: #f8fafc; /* Light text on purple tags */
@@ -85,7 +91,7 @@
             background-color: #22c55e; /* Green 500 */
             color: #f8fafc;
         }
-        .bg-black {
+        .bg-white {
             background-color: rgba(255, 255, 255, 0.15); /* Slightly more opaque white for buttons */
         }
         .text-indigo-700 {
@@ -102,20 +108,27 @@
     <div class="content-wrapper">
         <!-- Header/Hero Section -->
         <header class="bg-gradient-to-r from-indigo-800 to-purple-900 text-white py-20 px-4 sm:px-6 lg:px-8 shadow-lg rounded-b-3xl">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-6 overflow-hidden shadow-xl">
-                    <!-- Placeholder for Profile Picture -->
-                    <img src="https://github.com/Sudipta-Mitra/my_page/blob/main/2d72b8ae-d606-4034-95ba-51b58f8ad710.jpg" alt="Profile Picture" class="w-full h-full object-cover">
+            <div class="max-w-4xl mx-auto text-center md:flex md:justify-between md:items-center md:text-left">
+                <!-- Left side: Download CV -->
+                <div class="mb-8 md:mb-0 md:w-1/2 flex flex-col items-center md:items-start">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+                        Hi, I'm <span class="text-yellow-300">Sudipta Mitra</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl font-light mb-8">
+                        A passionate 3rd Year Data Science Student
+                    </p>
+                    <a href="path/to/your/cv.pdf" download class="inline-block bg-white text-indigo-700 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                        Download CV
+                    </a>
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-                    Hi, I'm <span class="text-yellow-300">Your Name</span>
-                </h1>
-                <p class="text-xl sm:text-2xl font-light mb-8">
-                    A passionate 3rd Year Data Science Student
-                </p>
-                <a href="#projects" class="inline-block bg-white text-indigo-700 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-                    View My Work
-                </a>
+
+                <!-- Right side: Profile Picture -->
+                <div class="md:w-1/2 flex justify-center md:justify-end">
+                    <div class="w-48 h-48 rounded-full bg-gray-200 overflow-hidden shadow-xl border-4 border-indigo-400">
+                        <!-- Replace with your actual profile picture -->
+                        <img src="https://placehold.co/192x192/cbd5e1/475569?text=Your+Photo" alt="Sudipta Mitra Profile Picture" class="w-full h-full object-cover">
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -125,98 +138,94 @@
                 <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">About Me</h2>
                 <div class="p-8 rounded-xl shadow-md border">
                     <p class="text-lg leading-relaxed mb-4">
-                        I am a 3rd-year Data Science student with a strong interest in machine learning, data analysis, and predictive modeling. I enjoy transforming raw data into actionable insights and building intelligent systems. My academic journey has equipped me with a solid foundation in statistics, programming, and various data science methodologies.
+                        Hi! I’m Sudipta Mitra, a passionate and driven Data Science student with a strong foundation in machine learning, deep learning, and real-world data analytics.
                     </p>
                     <p class="text-lg leading-relaxed">
-                        I am constantly exploring new technologies and techniques in the data science landscape, and I'm eager to apply my skills to real-world challenges. I am proficient in Python, R, SQL, and various data visualization tools.
+                        I love turning complex problems into simple, actionable solutions—whether it's predicting crime rates, building multilingual sentiment models, or visualizing insights in Power BI and Tableau.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">Education</h2>
+                <div class="p-8 rounded-xl shadow-md border">
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-semibold text-white">NSHM KNOWLEDGE CAMPUS KOLKATA</h3>
+                        <p class="text-lg text-gray-300">B.Sc. Data Science</p>
+                        <p class="text-md text-gray-400">2023 - 2027</p>
+                    </div>
+                    <!-- Add more education entries if needed -->
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+        <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">Skills</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Skill Card 1 -->
-                    <div class="p-6 rounded-xl shadow-md border flex items-center space-x-4">
-                        <span class="text-indigo-500 text-3xl">&#128187;</span> <!-- Laptop emoji -->
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Programming Languages</h3>
-                            <ul class="list-disc list-inside">
-                                <li>Python (Pandas, NumPy, Scikit-learn, TensorFlow, Keras)</li>
-                                <li>R</li>
-                                <li>SQL</li>
-                            </ul>
+                <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">My Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Skill Category: Programming & Libraries -->
+                    <div class="p-6 rounded-xl shadow-md border skill-card-bg-1 flex flex-col items-center text-center">
+                        <span class="text-indigo-300 text-4xl mb-4">&#128187;</span> <!-- Laptop emoji -->
+                        <h3 class="text-xl font-semibold mb-3 text-white">Programming & Libraries</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="bg-indigo-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Python</span>
+                            <span class="bg-indigo-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">R</span>
+                            <span class="bg-indigo-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Pandas</span>
+                            <span class="bg-indigo-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">NumPy</span>
                         </div>
                     </div>
-                    <!-- Skill Card 2 -->
-                    <div class="p-6 rounded-xl shadow-md border flex items-center space-x-4">
-                        <span class="text-green-500 text-3xl">&#128200;</span> <!-- Chart emoji -->
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Data Analysis & Visualization</h3>
-                            <ul class="list-disc list-inside">
-                                <li>Exploratory Data Analysis (EDA)</li>
-                                <li>Matplotlib, Seaborn, Plotly</li>
-                                <li>Tableau, Power BI</li>
-                            </ul>
+
+                    <!-- Skill Category: Machine Learning & Deep Learning -->
+                    <div class="p-6 rounded-xl shadow-md border skill-card-bg-2 flex flex-col items-center text-center">
+                        <span class="text-green-300 text-4xl mb-4">&#129504;</span> <!-- Brain emoji -->
+                        <h3 class="text-xl font-semibold mb-3 text-white">ML & Deep Learning</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Machine Learning</span>
+                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Deep Learning</span>
+                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">NLP</span>
+                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Transformers</span>
+                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">TensorFlow</span>
+                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Keras</span>
                         </div>
                     </div>
-                    <!-- Skill Card 3 -->
-                    <div class="p-6 rounded-xl shadow-md border flex items-center space-x-4">
-                        <span class="text-red-500 text-3xl">&#129504;</span> <!-- Brain emoji -->
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Machine Learning</h3>
-                            <ul class="list-disc list-inside">
-                                <li>Supervised & Unsupervised Learning</li>
-                                <li>Deep Learning</li>
-                                <li>Natural Language Processing (NLP)</li>
-                            </ul>
+
+                    <!-- Skill Category: Data Visualization & Databases -->
+                    <div class="p-6 rounded-xl shadow-md border skill-card-bg-3 flex flex-col items-center text-center">
+                        <span class="text-red-300 text-4xl mb-4">&#128200;</span> <!-- Chart emoji -->
+                        <h3 class="text-xl font-semibold mb-3 text-white">Data Viz & Databases</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Matplotlib</span>
+                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Seaborn</span>
+                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Power BI</span>
+                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Excel</span>
+                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Tableau</span>
+                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">SQL</span>
                         </div>
                     </div>
-                    <!-- Skill Card 4 -->
-                    <div class="p-6 rounded-xl shadow-md border flex items-center space-x-4">
-                        <span class="text-yellow-500 text-3xl">&#128188;</span> <!-- Database emoji -->
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Databases & Tools</h3>
-                            <ul class="list-disc list-inside">
-                                <li>MySQL, PostgreSQL</li>
-                                <li>MongoDB</li>
-                                <li>Git, Docker</li>
-                            </ul>
+
+                    <!-- Skill Category: Methodologies & Tools -->
+                    <div class="p-6 rounded-xl shadow-md border skill-card-bg-4 flex flex-col items-center text-center">
+                        <span class="text-yellow-300 text-4xl mb-4">&#128221;</span> <!-- Memo emoji -->
+                        <h3 class="text-xl font-semibold mb-3 text-white">Methodologies & Tools</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="bg-yellow-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Statistical Analysis</span>
+                            <span class="bg-yellow-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Git</span>
+                            <span class="bg-yellow-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Docker</span>
+                            <span class="bg-yellow-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">A/B Testing</span>
                         </div>
                     </div>
-                    <!-- Skill Card 5 -->
-                    <div class="p-6 rounded-xl shadow-md border flex items-center space-x-4">
-                        <span class="text-purple-500 text-3xl">&#128279;</span> <!-- Link emoji -->
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Cloud Platforms</h3>
-                            <ul class="list-disc list-inside">
-                                <li>AWS (S3, EC2)</li>
-                                <li>Google Cloud Platform (GCP)</li>
-                                <li>Azure</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Skill Card 6 -->
-                    <div class="p-6 rounded-xl shadow-md border flex items-center space-x-4">
-                        <span class="text-blue-500 text-3xl">&#128221;</span> <!-- Memo emoji -->
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Methodologies</h3>
-                            <ul class="list-disc list-inside">
-                                <li>A/B Testing</li>
-                                <li>Statistical Modeling</li>
-                                <li>Experiment Design</li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8">
+        <section id="projects" class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">My Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -262,7 +271,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 rounded-t-3xl">
+        <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 rounded-t-3xl">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">Get In Touch</h2>
                 <div class="p-8 rounded-xl shadow-md border">
@@ -308,7 +317,7 @@
 
         <!-- Footer -->
         <footer class="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8 text-center rounded-t-3xl">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Sudipta Mitra. All rights reserved.</p>
             <p class="text-sm mt-2">Built with &#x2764;&#xFE0F; and Tailwind CSS</p>
         </footer>
     </div>
