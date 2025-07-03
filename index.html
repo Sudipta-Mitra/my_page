@@ -28,7 +28,7 @@
             width: 100%;
             height: 100%;
             z-index: -1; /* Place it behind other content */
-            opacity: 0.4; /* Made more subtle as requested previously */
+            opacity: 0.8; /* Reverted to 0.8 as per your last provided code */
         }
         /* Ensure content is above the canvas */
         .content-wrapper {
@@ -42,7 +42,7 @@
             padding-bottom: 0.5rem;
             margin-bottom: 2rem;
             font-weight: 700;
-            color: #a78bfa; /* Dark Violet 400 for headings, as requested */
+            color: #f8fafc; /* Light Slate 50 for titles on dark background, as per your last code */
         }
         .section-title::after {
             content: '';
@@ -51,24 +51,25 @@
             bottom: 0;
             width: 50%;
             height: 4px;
-            background-color: #c4b5fd; /* Purple 300 for the underline, as requested */
+            background-color: #a78bfa; /* Purple 400, as per your last code */
             border-radius: 9999px;
         }
         /* Adjust text color for sections that were previously on light background */
         section {
             color: #e2e8f0; /* Light Slate 200 */
         }
-        section .bg-white {
-            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white for cards */
-            backdrop-filter: blur(5px); /* Optional: add a blur effect */
+        /* Styling for the inner content boxes (cards) within sections */
+        .content-card {
+            background-color: rgba(38, 38, 38, 0.7); /* Darker grey with more opacity for cards */
+            backdrop-filter: blur(5px);
             border-color: rgba(255, 255, 255, 0.2);
             color: #f8fafc; /* Text color inside cards */
         }
-        /* Corrected bg-gray-50 styling */
-        section .bg-gray-50 {
-            background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent dark for alternate sections */
-            backdrop-filter: blur(5px);
-            border-color: rgba(255, 255, 255, 0.1);
+        /* Specific background for alternating sections (Education, Projects) */
+        .section-alt-bg {
+            background-color: rgba(24, 18, 43, 0.9); /* Dark purple with high opacity */
+            backdrop-filter: blur(8px);
+            border-color: rgba(255, 255, 255, 0.15);
         }
         .text-gray-600, .text-gray-700, .text-gray-800 {
             color: #cbd5e1; /* Adjust text colors for readability on dark background */
@@ -79,11 +80,11 @@
         .hover\:text-indigo-800:hover {
             color: #c4b5fd; /* Even lighter on hover */
         }
-        /* Custom skill card colors */
-        .skill-card-bg-1 { background-color: rgba(139, 92, 246, 0.2); border-color: rgba(139, 92, 246, 0.4); } /* Purple-500 */
-        .skill-card-bg-2 { background-color: rgba(34, 197, 94, 0.2); border-color: rgba(34, 197, 94, 0.4); } /* Green-500 */
-        .skill-card-bg-3 { background-color: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); } /* Red-500 */
-        .skill-card-bg-4 { background-color: rgba(234, 179, 8, 0.2); border-color: rgba(234, 179, 8, 0.4); } /* Yellow-500 */
+        /* Custom skill card colors - Increased opacity */
+        .skill-card-bg-1 { background-color: rgba(139, 92, 246, 0.4); border-color: rgba(139, 92, 246, 0.6); } /* Purple-500 */
+        .skill-card-bg-2 { background-color: rgba(34, 197, 94, 0.4); border-color: rgba(34, 197, 94, 0.6); } /* Green-500 */
+        .skill-card-bg-3 { background-color: rgba(239, 68, 68, 0.4); border-color: rgba(239, 68, 68, 0.6); } /* Red-500 */
+        .skill-card-bg-4 { background-color: rgba(234, 179, 8, 0.4); border-color: rgba(234, 179, 8, 0.6); } /* Yellow-500 */
 
         .bg-indigo-100 {
             background-color: #8b5cf6; /* Purple 500 */
@@ -209,7 +210,7 @@
         <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 fade-in-section">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">About Me</h2>
-                <div class="p-8 rounded-xl shadow-md border">
+                <div class="p-8 rounded-xl shadow-md border content-card">
                     <p class="text-lg leading-relaxed mb-4">
                         Hi! I’m Sudipta Mitra, a passionate and driven Data Science student with a strong foundation in machine learning, deep learning, and real-world data analytics.
                     </p>
@@ -221,10 +222,10 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 fade-in-section">
+        <section id="education" class="section-alt-bg py-16 px-4 sm:px-6 lg:px-8 fade-in-section">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">Education</h2>
-                <div class="p-8 rounded-xl shadow-md border">
+                <div class="p-8 rounded-xl shadow-md border content-card">
                     <div class="mb-4">
                         <h3 class="text-2xl font-semibold text-white">NSHM KNOWLEDGE CAMPUS KOLKATA</h3>
                         <p class="text-lg text-gray-300">B.Sc. Data Science</p>
@@ -296,12 +297,12 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 fade-in-section">
+        <section id="projects" class="section-alt-bg py-16 px-4 sm:px-6 lg:px-8 fade-in-section">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">My Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Project Card 1 -->
-                    <div class="rounded-xl shadow-md overflow-hidden border slide-in-left">
+                    <div class="rounded-xl shadow-md overflow-hidden border content-card slide-in-left">
                         <img src="https://placehold.co/600x300/e2e8f0/475569?text=Project+Image+1" alt="Project 1" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold mb-3">Predictive Sales Forecasting</h3>
@@ -319,7 +320,7 @@
                         </div>
                     </div>
                     <!-- Project Card 2 -->
-                    <div class="rounded-xl shadow-md overflow-hidden border slide-in-right">
+                    <div class="rounded-xl shadow-md overflow-hidden border content-card slide-in-right">
                         <img src="https://placehold.co/600x300/e2e8f0/475569?text=Project+Image+2" alt="Project 2" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold mb-3">Customer Churn Prediction</h3>
@@ -345,7 +346,7 @@
         <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 rounded-t-3xl fade-in-section">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">Get In Touch</h2>
-                <div class="p-8 rounded-xl shadow-md border">
+                <div class="p-8 rounded-xl shadow-md border content-card">
                     <p class="text-lg leading-relaxed mb-6 text-center">
                         Have a question or want to collaborate? Feel free to reach out!
                     </p>
