@@ -198,8 +198,9 @@
 
                 <!-- Right side: Profile Picture -->
                 <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
-                    <div class="mw-100 rounded-3 shadow-lg">
-                        <img src="photo-removebg-preview.png" alt="Sudipta Mitra Profile Picture" class="img-fluid rounded-3">
+                    <!-- Removed fixed width/height and rounded-circle, reverted to rounded-3 -->
+                    <div class="mw-100 rounded-3 shadow-lg overflow-hidden">
+                        <img src="photo-removebg-preview.png" alt="Sudipta Mitra Profile Picture" class="img-fluid w-100 h-auto object-fit-cover">
                     </div>
                 </div>
             </div>
