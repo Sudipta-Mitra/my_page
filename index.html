@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudipta Mitra - Data Science Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -28,7 +28,7 @@
             width: 100%;
             height: 100%;
             z-index: -1; /* Place it behind other content */
-            opacity: 0.8; /* Reverted to 0.8 as per your last provided code */
+            opacity: 0.8;
         }
         /* Ensure content is above the canvas */
         .content-wrapper {
@@ -42,7 +42,7 @@
             padding-bottom: 0.5rem;
             margin-bottom: 2rem;
             font-weight: 700;
-            color: #f8fafc; /* Light Slate 50 for titles on dark background, as per your last code */
+            color: #f8fafc;
         }
         .section-title::after {
             content: '';
@@ -51,7 +51,7 @@
             bottom: 0;
             width: 50%;
             height: 4px;
-            background-color: #a78bfa; /* Purple 400, as per your last code */
+            background-color: #a78bfa; /* Purple 400 */
             border-radius: 9999px;
         }
         /* Adjust text color for sections that were previously on light background */
@@ -62,22 +62,22 @@
         .content-card {
             background-color: rgba(38, 38, 38, 0.7); /* Darker grey with more opacity for cards */
             backdrop-filter: blur(5px);
-            border-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: #f8fafc; /* Text color inside cards */
         }
         /* Specific background for alternating sections (Education, Projects) */
         .section-alt-bg {
             background-color: rgba(24, 18, 43, 0.9); /* Dark purple with high opacity */
             backdrop-filter: blur(8px);
-            border-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
-        .text-gray-600, .text-gray-700, .text-gray-800 {
+        .text-gray-600-custom, .text-gray-700-custom, .text-gray-800-custom {
             color: #cbd5e1; /* Adjust text colors for readability on dark background */
         }
-        .text-indigo-600, .text-indigo-700, .text-indigo-800 {
+        .text-indigo-600-custom, .text-indigo-700-custom, .text-indigo-800-custom {
             color: #a78bfa; /* Lighter indigo for links/buttons */
         }
-        .hover\:text-indigo-800:hover {
+        .hover-text-indigo-800-custom:hover {
             color: #c4b5fd; /* Even lighter on hover */
         }
         /* Custom skill card colors - Increased opacity */
@@ -86,19 +86,30 @@
         .skill-card-bg-3 { background-color: rgba(239, 68, 68, 0.4); border-color: rgba(239, 68, 68, 0.6); } /* Red-500 */
         .skill-card-bg-4 { background-color: rgba(234, 179, 8, 0.4); border-color: rgba(234, 179, 8, 0.6); } /* Yellow-500 */
 
-        .bg-indigo-100 {
+        .bg-indigo-100-custom {
             background-color: #8b5cf6; /* Purple 500 */
             color: #f8fafc; /* Light text on purple tags */
         }
-        .bg-green-100 {
+        .bg-green-100-custom {
             background-color: #22c55e; /* Green 500 */
             color: #f8fafc;
         }
-        .bg-white {
+        .bg-white-custom {
             background-color: rgba(255, 255, 255, 0.15); /* Slightly more opaque white for buttons */
         }
-        .text-indigo-700 {
+        .text-indigo-700-custom {
             color: #c4b5fd; /* Text color for hero button */
+        }
+        .btn-custom {
+            background-color: #6d28d9; /* Indigo 600 */
+            border-color: #6d28d9;
+            color: white;
+            transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .btn-custom:hover {
+            background-color: #4f1e94; /* Darker Indigo */
+            border-color: #4f1e94;
+            transform: scale(1.05);
         }
 
         /* Animation styles for scroll-triggered effects */
@@ -141,80 +152,68 @@
     <!-- Main content wrapper to ensure it's above the canvas -->
     <div class="content-wrapper">
         <!-- Navigation Bar -->
-        <nav class="bg-gray-900 bg-opacity-80 backdrop-blur-sm fixed w-full z-50 shadow-lg rounded-b-lg">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-16">
-                    <div class="flex-shrink-0">
-                        <a href="#home" class="text-white text-2xl font-bold">Sudipta</a>
-                    </div>
-                    <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline space-x-4">
-                            <a href="#home" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                            <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About Me</a>
-                            <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                            <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                            <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                        </div>
-                    </div>
-                    <!-- Mobile menu button (Hamburger icon for later implementation if needed) -->
-                    <div class="-mr-2 flex md:hidden">
-                        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                            <span class="sr-only">Open main menu</span>
-                            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Mobile menu, show/hide based on menu state. (Hidden by default) -->
-            <div class="md:hidden" id="mobile-menu">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#home" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                    <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Me</a>
-                    <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
-                    <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                    <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+        <nav class="navbar navbar-expand-md bg-dark bg-opacity-75 backdrop-blur-sm fixed-top shadow-lg rounded-bottom-3">
+            <div class="container">
+                <a class="navbar-brand text-white fs-4 fw-bold" href="#home">Sudipta</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-light hover-text-white px-3 py-2 rounded-3 fs-6 fw-medium" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light hover-text-white px-3 py-2 rounded-3 fs-6 fw-medium" href="#about">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light hover-text-white px-3 py-2 rounded-3 fs-6 fw-medium" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light hover-text-white px-3 py-2 rounded-3 fs-6 fw-medium" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light hover-text-white px-3 py-2 rounded-3 fs-6 fw-medium" href="#contact">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
 
         <!-- Header/Hero Section -->
-        <header id="home" class="bg-gradient-to-r from-[#2c0742] to-[#1a052a] text-white py-20 px-4 sm:px-6 lg:px-8 shadow-lg rounded-b-3xl pt-24"> <!-- Added pt-24 for nav bar clearance -->
-            <div class="max-w-4xl mx-auto text-center md:flex md:justify-between md:items-center md:text-left">
+        <header id="home" class="py-5 px-4 pt-5 shadow-lg rounded-bottom-3xl" style="background: linear-gradient(to right, #2c0742, #1a052a); padding-top: 6rem !important;">
+            <div class="container text-center text-md-start d-md-flex justify-content-between align-items-center">
                 <!-- Left side: Download CV -->
-                <div class="mb-8 md:mb-0 md:w-1/2 flex flex-col items-center md:items-start">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-                        Hi, I'm <span class="text-yellow-300">Sudipta Mitra</span>
+                <div class="mb-4 mb-md-0 col-md-6 d-flex flex-column align-items-center align-items-md-start">
+                    <h1 class="display-4 fw-bolder mb-3 lh-sm">
+                        Hi, I'm <span class="text-warning">Sudipta Mitra</span>
                     </h1>
-                    <p class="text-xl sm:text-2xl font-light mb-8">
+                    <p class="fs-4 fw-light mb-4">
                         A passionate 3rd Year Data Science Student
                     </p>
-                    <a href="path/to/your/cv.pdf" download class="inline-block bg-white text-indigo-700 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    <a href="path/to/your/cv.pdf" download class="btn bg-white-custom text-indigo-700-custom fw-semibold py-3 px-5 rounded-pill shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
                         Download CV
                     </a>
                 </div>
 
                 <!-- Right side: Profile Picture -->
-                <div class="md:w-1/2 flex justify-center md:justify-end">
-                    <!-- Changed from rounded-full to rounded-lg for a rectangular shape -->
-                    <div class="max-w-sm rounded-lg shadow-xl">
-                        <!-- Replace with your actual profile picture (full length, background removed) -->
-                        <img src="photo.jpeg" alt="Sudipta Mitra Profile Picture" class="w-full h-auto object-cover rounded-lg">
+                <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+                    <div class="mw-100 rounded-3 shadow-lg">
+                        <img src="https://placehold.co/300x400/4c1d95/FFFFFF?text=Your+Photo" alt="Sudipta Mitra Profile Picture" class="img-fluid rounded-3">
                     </div>
                 </div>
             </div>
         </header>
 
         <!-- About Me Section -->
-        <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 fade-in-section">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">About Me</h2>
-                <div class="p-8 rounded-xl shadow-md border content-card">
-                    <p class="text-lg leading-relaxed mb-4">
+        <section id="about" class="py-5 px-4 fade-in-section">
+            <div class="container">
+                <h2 class="fs-2 fw-bold text-center section-title mx-auto mb-5">About Me</h2>
+                <div class="p-4 rounded-3 shadow border content-card">
+                    <p class="fs-5 lh-base mb-3">
                         Hi! I’m Sudipta Mitra, a passionate and driven Data Science student with a strong foundation in machine learning, deep learning, and real-world data analytics.
                     </p>
-                    <p class="text-lg leading-relaxed">
+                    <p class="fs-5 lh-base">
                         Experienced in building data-driven models and dashboards using Python, SQL, and Power BI. Passionate about solving real-world problems and contributing to business growth with actionable insights
                     </p>
                 </div>
@@ -222,14 +221,14 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="section-alt-bg py-16 px-4 sm:px-6 lg:px-8 fade-in-section">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">Education</h2>
-                <div class="p-8 rounded-xl shadow-md border content-card">
-                    <div class="mb-4">
-                        <h3 class="text-2xl font-semibold text-white">NSHM KNOWLEDGE CAMPUS KOLKATA</h3>
-                        <p class="text-lg text-gray-300">B.Sc. Data Science</p>
-                        <p class="text-md text-gray-400">2023 - 2027</p>
+        <section id="education" class="section-alt-bg py-5 px-4 fade-in-section">
+            <div class="container">
+                <h2 class="fs-2 fw-bold text-center section-title mx-auto mb-5">Education</h2>
+                <div class="p-4 rounded-3 shadow border content-card">
+                    <div class="mb-3">
+                        <h3 class="fs-4 fw-semibold text-white">NSHM KNOWLEDGE CAMPUS KOLKATA</h3>
+                        <p class="fs-5 text-gray-300-custom">B.Sc. Data Science</p>
+                        <p class="fs-6 text-gray-400-custom">2023 - 2027</p>
                     </div>
                     <!-- Add more education entries if needed -->
                 </div>
@@ -237,58 +236,66 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 fade-in-section">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">My Skills</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section id="skills" class="py-5 px-4 fade-in-section">
+            <div class="container">
+                <h2 class="fs-2 fw-bold text-center section-title mx-auto mb-5">My Skills</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
                     <!-- Skill Category: Programming & Libraries -->
-                    <div class="p-6 rounded-xl shadow-md border skill-card-bg-1 flex flex-col items-center text-center slide-in-left">
-                        <span class="text-indigo-300 text-4xl mb-4">&#128187;</span> <!-- Laptop emoji -->
-                        <h3 class="text-xl font-semibold mb-3 text-white">Programming & Libraries</h3>
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <span class="bg-indigo-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Python</span>
-                            <span class="bg-indigo-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Pandas</span>
-                            <span class="bg-indigo-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">NumPy</span>
+                    <div class="col">
+                        <div class="p-4 rounded-3 shadow border skill-card-bg-1 d-flex flex-column align-items-center text-center slide-in-left">
+                            <span class="text-indigo-300-custom fs-1 mb-3">&#128187;</span> <!-- Laptop emoji -->
+                            <h3 class="fs-4 fw-semibold mb-3 text-white">Programming & Libraries</h3>
+                            <div class="d-flex flex-wrap justify-content-center gap-2">
+                                <span class="badge bg-indigo-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Python</span>
+                                <span class="badge bg-indigo-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Pandas</span>
+                                <span class="badge bg-indigo-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">NumPy</span>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Skill Category: Machine Learning & Deep Learning -->
-                    <div class="p-6 rounded-xl shadow-md border skill-card-bg-2 flex flex-col items-center text-center slide-in-right">
-                        <span class="text-green-300 text-4xl mb-4">&#129504;</span> <!-- Brain emoji -->
-                        <h3 class="text-xl font-semibold mb-3 text-white">ML & Deep Learning</h3>
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Machine Learning</span>
-                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Deep Learning</span>
-                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">NLP</span>
-                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Transformers</span>
-                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">TensorFlow</span>
-                            <span class="bg-green-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Keras</span>
+                    <div class="col">
+                        <div class="p-4 rounded-3 shadow border skill-card-bg-2 d-flex flex-column align-items-center text-center slide-in-right">
+                            <span class="text-green-300-custom fs-1 mb-3">&#129504;</span> <!-- Brain emoji -->
+                            <h3 class="fs-4 fw-semibold mb-3 text-white">ML & Deep Learning</h3>
+                            <div class="d-flex flex-wrap justify-content-center gap-2">
+                                <span class="badge bg-green-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Machine Learning</span>
+                                <span class="badge bg-green-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Deep Learning</span>
+                                <span class="badge bg-green-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">NLP</span>
+                                <span class="badge bg-green-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Transformers</span>
+                                <span class="badge bg-green-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">TensorFlow</span>
+                                <span class="badge bg-green-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Keras</span>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Skill Category: Data Visualization & Databases -->
-                    <div class="p-6 rounded-xl shadow-md border skill-card-bg-3 flex flex-col items-center text-center slide-in-left">
-                        <span class="text-red-300 text-4xl mb-4">&#128200;</span> <!-- Chart emoji -->
-                        <h3 class="text-xl font-semibold mb-3 text-white">Data Viz & Databases</h3>
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Matplotlib</span>
-                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Seaborn</span>
-                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Power BI</span>
-                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Excel</span>
-                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Tableau</span>
-                            <span class="bg-red-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">SQL</span>
+                    <div class="col">
+                        <div class="p-4 rounded-3 shadow border skill-card-bg-3 d-flex flex-column align-items-center text-center slide-in-left">
+                            <span class="text-red-300-custom fs-1 mb-3">&#128200;</span> <!-- Chart emoji -->
+                            <h3 class="fs-4 fw-semibold mb-3 text-white">Data Viz & Databases</h3>
+                            <div class="d-flex flex-wrap justify-content-center gap-2">
+                                <span class="badge bg-red-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Matplotlib</span>
+                                <span class="badge bg-red-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Seaborn</span>
+                                <span class="badge bg-red-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Power BI</span>
+                                <span class="badge bg-red-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Excel</span>
+                                <span class="badge bg-red-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Tableau</span>
+                                <span class="badge bg-red-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">SQL</span>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Skill Category: Methodologies & Tools -->
-                    <div class="p-6 rounded-xl shadow-md border skill-card-bg-4 flex flex-col items-center text-center slide-in-right">
-                        <span class="text-yellow-300 text-4xl mb-4">&#128221;</span> <!-- Memo emoji -->
-                        <h3 class="text-xl font-semibold mb-3 text-white">Methodologies & Tools</h3>
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <span class="bg-yellow-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Statistical Analysis</span>
-                            <span class="bg-yellow-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Git</span>
-                            <span class="bg-yellow-700 text-white text-sm font-medium px-3 py-1 rounded-full shadow-sm">Docker</span>
+                    <div class="col">
+                        <div class="p-4 rounded-3 shadow border skill-card-bg-4 d-flex flex-column align-items-center text-center slide-in-right">
+                            <span class="text-yellow-300-custom fs-1 mb-3">&#128221;</span> <!-- Memo emoji -->
+                            <h3 class="fs-4 fw-semibold mb-3 text-white">Methodologies & Tools</h3>
+                            <div class="d-flex flex-wrap justify-content-center gap-2">
+                                <span class="badge bg-yellow-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Statistical Analysis</span>
+                                <span class="badge bg-yellow-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Git</span>
+                                <span class="badge bg-yellow-700-custom text-white fs-6 fw-normal px-3 py-1 rounded-pill shadow-sm">Docker</span>
+                            </div>
                         </div>
                     </div>
 
@@ -297,44 +304,48 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section-alt-bg py-16 px-4 sm:px-6 lg:px-8 fade-in-section">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">My Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section id="projects" class="section-alt-bg py-5 px-4 fade-in-section">
+            <div class="container">
+                <h2 class="fs-2 fw-bold text-center section-title mx-auto mb-5">My Projects</h2>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
                     <!-- Project Card 1 -->
-                    <div class="rounded-xl shadow-md overflow-hidden border content-card slide-in-left">
-                        <img src="https://placehold.co/600x300/e2e8f0/475569?text=Project+Image+1" alt="Project 1" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-3">Predictive Sales Forecasting</h3>
-                            <p class="mb-4">
-                                Developed a machine learning model to predict future sales based on historical data, seasonal trends, and promotional activities. Achieved a significant reduction in forecasting errors.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-indigo-100 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                                <span class="bg-indigo-100 text-xs font-medium px-2.5 py-0.5 rounded-full">Scikit-learn</span>
-                                <span class="bg-indigo-100 text-xs font-medium px-2.5 py-0.5 rounded-full">Time Series</span>
+                    <div class="col">
+                        <div class="card h-100 rounded-3 shadow border-0 content-card slide-in-left">
+                            <img src="https://placehold.co/600x300/e2e8f0/475569?text=Project+Image+1" class="card-img-top rounded-top-3" alt="Project 1">
+                            <div class="card-body">
+                                <h3 class="card-title fs-4 fw-semibold mb-3">Predictive Sales Forecasting</h3>
+                                <p class="card-text mb-3">
+                                    Developed a machine learning model to predict future sales based on historical data, seasonal trends, and promotional activities. Achieved a significant reduction in forecasting errors.
+                                </p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge bg-indigo-100-custom fs-6 fw-normal px-3 py-1 rounded-pill">Python</span>
+                                    <span class="badge bg-indigo-100-custom fs-6 fw-normal px-3 py-1 rounded-pill">Scikit-learn</span>
+                                    <span class="badge bg-indigo-100-custom fs-6 fw-normal px-3 py-1 rounded-pill">Time Series</span>
+                                </div>
+                                <a href="#" class="text-decoration-none text-indigo-600-custom hover-text-indigo-800-custom fw-medium">
+                                    View Project &rarr;
+                                </a>
                             </div>
-                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300 ease-in-out">
-                                View Project &rarr;
-                            </a>
                         </div>
                     </div>
                     <!-- Project Card 2 -->
-                    <div class="rounded-xl shadow-md overflow-hidden border content-card slide-in-right">
-                        <img src="https://placehold.co/600x300/e2e8f0/475569?text=Project+Image+2" alt="Project 2" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold mb-3">Customer Churn Prediction</h3>
-                            <p class="mb-4">
-                                Built a classification model to identify customers at risk of churning, enabling proactive retention strategies. Utilized various features including usage patterns and demographics.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-green-100 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                                <span class="bg-green-100 text-xs font-medium px-2.5 py-0.5 rounded-full">TensorFlow</span>
-                                <span class="bg-green-100 text-xs font-medium px-2.5 py-0.5 rounded-full">Classification</span>
+                    <div class="col">
+                        <div class="card h-100 rounded-3 shadow border-0 content-card slide-in-right">
+                            <img src="https://placehold.co/600x300/e2e8f0/475569?text=Project+Image+2" class="card-img-top rounded-top-3" alt="Project 2">
+                            <div class="card-body">
+                                <h3 class="card-title fs-4 fw-semibold mb-3">Customer Churn Prediction</h3>
+                                <p class="card-text mb-3">
+                                    Built a classification model to identify customers at risk of churning, enabling proactive retention strategies. Utilized various features including usage patterns and demographics.
+                                </p>
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    <span class="badge bg-green-100-custom fs-6 fw-normal px-3 py-1 rounded-pill">Python</span>
+                                    <span class="badge bg-green-100-custom fs-6 fw-normal px-3 py-1 rounded-pill">TensorFlow</span>
+                                    <span class="badge bg-green-100-custom fs-6 fw-normal px-3 py-1 rounded-pill">Classification</span>
+                                </div>
+                                <a href="#" class="text-decoration-none text-indigo-600-custom hover-text-indigo-800-custom fw-medium">
+                                    View Project &rarr;
+                                </a>
                             </div>
-                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium transition duration-300 ease-in-out">
-                                View Project &rarr;
-                            </a>
                         </div>
                     </div>
                     <!-- Add more project cards as needed -->
@@ -343,47 +354,56 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 rounded-t-3xl fade-in-section">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl text-center section-title mx-auto mb-10">Get In Touch</h2>
-                <div class="p-8 rounded-xl shadow-md border content-card">
-                    <p class="text-lg leading-relaxed mb-6 text-center">
+        <section id="contact" class="py-5 px-4 rounded-top-3xl fade-in-section">
+            <div class="container">
+                <h2 class="fs-2 fw-bold text-center section-title mx-auto mb-5">Get In Touch</h2>
+                <div class="col-md-8 mx-auto p-4 rounded-3 shadow border content-card">
+                    <p class="fs-5 lh-base mb-4 text-center">
                         Have a question or want to collaborate? Feel free to reach out!
                     </p>
-                    <form action="#" method="POST" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium mb-1">Name</label>
-                            <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-gray-700 text-white border-gray-600" placeholder="Your Name" required>
+                    <form action="#" method="POST" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label fs-6 fw-medium">Name</label>
+                            <input type="text" class="form-control bg-secondary-subtle border-secondary text-white p-2 rounded-3" id="name" name="name" placeholder="Your Name" required>
+                            <div class="invalid-feedback">
+                                Please enter your name.
+                            </div>
                         </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
-                            <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-gray-700 text-white border-gray-600" placeholder="your.email@example.com" required>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fs-6 fw-medium">Email</label>
+                            <input type="email" class="form-control bg-secondary-subtle border-secondary text-white p-2 rounded-3" id="email" name="email" placeholder="your.email@example.com" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
                         </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
-                            <textarea id="message" name="message" rows="5" class="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-gray-700 text-white border-gray-600" placeholder="Your message..." required></textarea>
+                        <div class="mb-4">
+                            <label for="message" class="form-label fs-6 fw-medium">Message</label>
+                            <textarea class="form-control bg-secondary-subtle border-secondary text-white p-2 rounded-3" id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter your message.
+                            </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out transform hover:scale-105">
+                            <button type="submit" class="btn btn-custom btn-lg rounded-pill shadow-lg">
                                 Send Message
                             </button>
                         </div>
                     </form>
-                    <div class="mt-8 text-center">
-                        <p>Or connect with me on:</p>
-                        <div class="flex justify-center space-x-6 mt-4">
-                            <a href="mailto:sudiptamitra945@gmail.com" class="text-white hover:text-gray-300 transition duration-300 ease-in-out" aria-label="Email">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <div class="mt-5 text-center">
+                        <p class="fs-5">Or connect with me on:</p>
+                        <div class="d-flex justify-content-center gap-4 mt-3">
+                            <a href="mailto:sudiptamitra945@gmail.com" class="text-white hover-text-gray-300-custom transition duration-300 ease-in-out" aria-label="Email">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="width: 2rem; height: 2rem;">
                                     <path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2L12 13 2 6h20zm0 12H2V8l10 7 10-7v10z"/>
                                 </svg>
                             </a>
-                           <a href="http://linkedin.com/in/sudipta-mitra-81b349201" target="_blank" class="text-white hover:text-gray-300 transition duration-300 ease-in-out" aria-label="LinkedIn">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                           <a href="http://linkedin.com/in/sudipta-mitra-81b349201" target="_blank" class="text-white hover-text-gray-300-custom transition duration-300 ease-in-out" aria-label="LinkedIn">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="width: 2rem; height: 2rem;">
                                     <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
                                 </svg>
                             </a>
-                            <a href="http://github.com/Sudipta-Mitra" target="_blank" class="text-white hover:text-gray-300 transition duration-300 ease-in-out" aria-label="GitHub">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <a href="http://github.com/Sudipta-Mitra" target="_blank" class="text-white hover-text-gray-300-custom transition duration-300 ease-in-out" aria-label="GitHub">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="width: 2rem; height: 2rem;">
                                     <path fill-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.799 8.205 11.385.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.332-1.758-1.332-1.758-1.09-.744.082-.729.082-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.304.762-1.605-2.665-.304-5.466-1.332-5.466-5.93 0-1.31.465-2.382 1.237-3.22-.124-.304-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.4 3.003-.404 1.02.004 2.046.138 3.003.404 2.293-1.552 3.3-1.23 3.3-1.23.652 1.652.241 2.872.118 3.176.77.838 1.233 1.91 1.233 3.22 0 4.61-2.806 5.624-5.476 5.92.428.368.812 1.104.812 2.22 0 1.606-.015 2.896-.015 3.286 0 .323.21.698.825.577C20.565 21.796 24 17.302 24 12c0-6.627-5.373-12-12-12z" clip-rule="evenodd" />
                                 </svg>
                             </a>
@@ -394,11 +414,15 @@
         </section>
 
         <!-- Footer -->
-        <footer class="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8 text-center rounded-t-3xl">
+        <footer class="bg-dark text-white py-4 px-4 text-center rounded-top-3xl">
             <p>&copy; 2025 Sudipta Mitra. All rights reserved.</p>
-            <p class="text-sm mt-2">Designed &#x2764;&#xFE0F; and Built by Sudipta Mitra</p>
+            <p class="fs-6 mt-2">Designed &#x2764;&#xFE0F; and Built by Sudipta Mitra</p>
         </footer>
     </div>
+
+    <!-- Bootstrap JS CDN (Popper.js and Bootstrap JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" xintegrity="sha384-I7E8VVD/ismYTF4hNIPjVpZVf/G6Fy3xouqC8CBwLg2pMyj/sHGY8pvtHfC/fSFA" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" xintegrity="sha384-0pUGZvbkm6XF6gxjEnlcoJoZfJODyqcnr4zQ+VzofU8AnK4C/hBwK1z0z/kF" crossorigin="anonymous"></script>
 
     <script>
         window.onload = function() {
@@ -518,64 +542,26 @@
                     if (entry.isIntersecting) {
                         // Add 'is-visible' class to trigger animation
                         entry.target.classList.add('is-visible');
-
-                        // For skill cards, add specific slide-in classes with a delay
-                        if (entry.target.id === 'skills') {
-                            const skillCards = entry.target.querySelectorAll('.skill-card-bg-1, .skill-card-bg-2, .skill-card-bg-3, .skill-card-bg-4');
-                            skillCards.forEach((card, index) => {
-                                setTimeout(() => {
-                                    if (index % 2 === 0) {
-                                        card.classList.add('is-visible');
-                                    } else {
-                                        card.classList.add('is-visible');
-                                    }
-                                }, index * 150); // Stagger the animation
-                            });
-                        }
-                        // For project cards, add specific slide-in classes with a delay
-                        if (entry.target.id === 'projects') {
-                            const projectCards = entry.target.querySelectorAll('.rounded-xl.shadow-md.overflow-hidden.border');
-                            projectCards.forEach((card, index) => {
-                                setTimeout(() => {
-                                    if (index % 2 === 0) {
-                                        card.classList.add('is-visible');
-                                    } else {
-                                        card.classList.add('is-visible');
-                                    }
-                                }, index * 150); // Stagger the animation
-                            });
-                        }
-
                         observer.unobserve(entry.target); // Stop observing once animated
                     }
                 });
             }, observerOptions);
 
-            // Observe sections for general fade-in
-            document.querySelectorAll('section').forEach(section => {
-                if (section.id !== 'home') { // Exclude home section as it's visible on load
-                    section.classList.add('fade-in-section'); // Add initial hidden state
-                    observer.observe(section);
-                }
+            // Observe elements for animations
+            document.querySelectorAll('.fade-in-section, .slide-in-left, .slide-in-right').forEach(el => {
+                observer.observe(el);
             });
 
-            // Observe specific elements within sections for slide-in effects
-            document.querySelectorAll('#skills .skill-card-bg-1, #skills .skill-card-bg-2, #skills .skill-card-bg-3, #skills .skill-card-bg-4').forEach((card, index) => {
-                if (index % 2 === 0) {
-                    card.classList.add('slide-in-left');
-                } else {
-                    card.classList.add('slide-in-right');
-                }
-                observer.observe(card);
-            });
-
-            document.querySelectorAll('#projects .rounded-xl.shadow-md.overflow-hidden.border').forEach((card, index) => {
-                if (index % 2 === 0) {
-                    card.classList.add('slide-in-left');
-                } else {
-                    card.classList.add('slide-in-right');
-                }
-                observer.observe(card);
+            // Bootstrap form validation (optional, but good practice)
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
             });
         };
     </script>
